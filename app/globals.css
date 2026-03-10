@@ -1,8 +1,12 @@
 @import 'modern-normalize/modern-normalize.css';
 
 :root {
-  --background: #ffffff;
+  --white: #ffffff;
   --dark: #101828;
+  --blue: #3470ff;
+  --blue-dark: #0b44cd;
+  --gray: #8d929a;
+  --background: var(--white);
   --text-color: var(--dark);
   --font-family: var(--font-manrope), sans-serif;
   --second-family: var(--font-inter), sans-serif;
@@ -50,30 +54,14 @@ img {
   height: auto;
 }
 
+button {
+  cursor: pointer;
+}
+
 .container {
   width: 100%;
-  margin: 0px auto;
-  padding: 0 20px;
-}
-
-@media screen and (min-width: 375px) and (max-width: 767px) {
-  .container {
-    max-width: 375px;
-  }
-}
-
-@media screen and (min-width: 768px) {
-  .container {
-    max-width: 768px;
-    padding-left: 32px;
-    padding-right: 32px;
-  }
-}
-
-@media screen and (min-width: 1440px) {
-  .container {
-    max-width: 1440px;
-    padding-left: 120px;
-    padding-right: 120px;
-  }
+  max-width: 1440px;
+  margin: 0 auto;
+  padding-left: 120px;
+  padding-right: 120px;
 }
