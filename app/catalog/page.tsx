@@ -4,7 +4,11 @@ import { getCars } from '@/lib/api';
 async function CatalogPage() {
   const data = await getCars();
   console.log(data.cars);
-  return <CarList cars={data.cars} />;
+  return (
+    <div className="container">
+      <CarList cars={data.cars} />
+    </div>
+  );
 }
 
 export default CatalogPage;
