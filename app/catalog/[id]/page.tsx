@@ -1,5 +1,12 @@
+import BookingForm from '@/components/BookingForm/BookingForm';
+
 function CarDetailsPage() {
-  return <p>Car details</p>;
+  return (
+    <div>
+      <p>Car details</p>
+      <BookingForm />
+    </div>
+  );
 }
 
 export default CarDetailsPage;
