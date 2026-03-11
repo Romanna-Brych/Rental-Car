@@ -1,6 +1,5 @@
 .page {
-  display: flex;
-  min-height: 100vh;
+  min-height: calc(100vh - 68px);
   background-color: var(--gray);
   background-repeat: no-repeat;
   background-position: center top;
@@ -13,13 +12,13 @@
 
 .main {
   display: flex;
-  min-height: 100vh;
+  min-height: calc(100vh - 68px);
   width: 100%;
-  padding-top: 440px;
   padding-bottom: 60px;
   flex-direction: column;
   gap: 16px;
   align-items: center;
+  justify-content: flex-end;
 }
 
 .title {
