@@ -1,4 +1,4 @@
-import { CarsResponse } from '@/types/car';
+import { Car, CarsResponse } from '@/types/car';
 import axios from 'axios';
 
 export const api = axios.create({
@@ -20,5 +20,10 @@ export async function getCars(
   const { data } = await api.get<CarsResponse>('/cars', {
     params,
   });
+  return data;
+}
+
+export async function getCarById(id: string): Promise<Car> {
+  const { data } = await api.get<Car>(`/cars/${id}`);
   return data;
 }
