@@ -27,3 +27,8 @@ export async function getCarById(id: string): Promise<Car> {
   const { data } = await api.get<Car>(`/cars/${id}`);
   return data;
 }
+
+export async function getBrands(): Promise<string[]> {
+  const { data } = await api.get<string[]>('/brands');
+  return data;
+}
