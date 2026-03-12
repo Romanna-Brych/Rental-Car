@@ -1,0 +1,93 @@
+.form {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 16px;
+  padding-top: 84px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.label {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.33;
+  color: var(--gray);
+}
+
+.selectWrap {
+  position: relative;
+}
+
+.select {
+  appearance: none;
+  width: 204px;
+  height: 44px;
+  border: none;
+  border-radius: 12px;
+  padding: 12px 40px 12px 16px;
+  background-color: #f7f7f7;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.25;
+  color: var(--dark);
+  outline: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16' fill='none'%3E%3Cpath d='M4 6L8 10L12 6' stroke='%23101828' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+}
+
+.mileageGroup {
+  display: flex;
+}
+
+.input {
+  width: 160px;
+  height: 44px;
+  border: none;
+  background-color: #f7f7f7;
+  padding: 12px 24px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.25;
+  color: var(--dark);
+  outline: none;
+}
+
+.input::placeholder {
+  color: var(--dark);
+}
+
+.inputFrom {
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
+  border-right: 1px solid #dadde1;
+}
+
+.inputTo {
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+
+.searchBtn {
+  min-width: 156px;
+  height: 44px;
+  border: none;
+  border-radius: 12px;
+  padding: 12px 24px;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.25;
+  color: var(--white);
+  background-color: var(--blue);
+  transition: background-color 250ms ease;
+}
+
+.searchBtn:hover,
+.searchBtn:focus {
+  background-color: var(--blue-dark);
+}
