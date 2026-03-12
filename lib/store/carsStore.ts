@@ -21,7 +21,7 @@ const initialFilters: FiltersState = {
   maxMileage: '',
 };
 
-export const useCarsStore = create<CarsStore>(set => ({
+export const useCarsStore = create<CarsStore>()(set => ({
   filters: initialFilters,
 
   setFilter: (name, value) =>
