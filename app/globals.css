@@ -66,3 +66,27 @@ button {
   padding-left: 120px;
   padding-right: 120px;
 }
+
+/* ======= */
+
+.errorWrapper {
+  padding: 40px;
+  text-align: center;
+}
+
+.errorBtn {
+  margin-top: 20px;
+  padding: 10px 16px;
+}
+
+/* ========= */
+
+.notFoundWrapper {
+  padding: 40px;
+  text-align: center;
+}
+
+.notFoundLink {
+  margin-top: 20px;
+  display: inline-block;
+}
