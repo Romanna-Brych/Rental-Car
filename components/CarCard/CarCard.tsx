@@ -3,16 +3,19 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Car } from '@/types/car';
 import css from './CarCard.module.css';
-import { useState } from 'react';
+import { useCarsStore } from '@/lib/store/carsStore';
 
 interface CarCardProps {
   car: Car;
 }
 
 function CarCard({ car }: CarCardProps) {
-  const [isFavorite, setIsFavorite] = useState(false);
+  const { favorites, toggleFavorite } = useCarsStore();
+  const isFavorite = favorites.includes(String(car.id));
+
   const [, city, country] = car.address.split(', ');
   const mileage = car.mileage.toLocaleString('uk-UA');
+
   return (
     <li className={css.card}>
       <div className={css.imageWrapper}>
@@ -20,11 +23,12 @@ function CarCard({ car }: CarCardProps) {
           className={css.img}
           src={car.img}
           alt={`${car.brand} ${car.model}`}
-          width={268}
-          height={276}
+          width={276}
+          height={268}
+          priority
         />
         <button
-          onClick={() => setIsFavorite(prev => !prev)}
+          onClick={() => toggleFavorite(String(car.id))}
           className={css.favoriteBtn}
           type="button"
         >
