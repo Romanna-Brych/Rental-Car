@@ -7,6 +7,7 @@ import * as Yup from 'yup';
 import DatePicker from 'react-datepicker';
 import { registerLocale } from 'react-datepicker';
 import { enGB } from 'date-fns/locale';
+import toast from 'react-hot-toast';
 
 registerLocale('enGB', enGB);
 
@@ -42,6 +43,7 @@ function BookingForm() {
   const [values, setValues] = useState<BookingFormValues>(initialValues);
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [selectedDate, setSelectedDate] = useState<Date | null>(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (
     event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -71,8 +73,9 @@ function BookingForm() {
 
     try {
       setErrors({});
+      setIsSubmitting(true);
       await BookingFormSchema.validate(formValues, { abortEarly: false });
-
+      toast.success('Car booked successfully!');
       setValues(initialValues);
       setSelectedDate(null);
     } catch (err) {
@@ -87,6 +90,8 @@ function BookingForm() {
 
         setErrors(formErrors);
       }
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -161,8 +166,8 @@ function BookingForm() {
           )}
         </div>
 
-        <button type="submit" className={css.button}>
-          Send
+        <button type="submit" className={css.button} disabled={isSubmitting}>
+          {isSubmitting ? 'Sending...' : 'Send'}
         </button>
       </form>
     </section>
