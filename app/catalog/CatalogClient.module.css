@@ -1,0 +1,36 @@
+.loadMoreWrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 124px;
+}
+
+.loadMoreBtn {
+  min-width: 156px;
+  height: 44px;
+  padding: 0 24px;
+  border: 1px solid var(--blue);
+  border-radius: 12px;
+  background-color: transparent;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.25;
+  color: var(--dark);
+  transition: border-color 250ms ease;
+}
+
+.loadMoreBtn:hover,
+.loadMoreBtn:focus {
+  border-color: var(--blue-dark);
+}
+
+.loadMoreBtn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.emptyMessage {
+  margin-top: 40px;
+  text-align: center;
+  font-size: 16px;
+  color: var(--gray);
+}
