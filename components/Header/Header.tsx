@@ -19,6 +19,7 @@ function Header() {
               height={16}
               className={css.logoImg}
               alt="logo"
+              priority
             />
           </Link>
 
