@@ -3,6 +3,7 @@ import { Manrope, Inter } from 'next/font/google';
 import './globals.css';
 import Header from '@/components/Header/Header';
 import TanStackProvider from '@/components/TanStackProvider/TanStackProvider';
+import { Toaster } from 'react-hot-toast';
 
 const manrope = Manrope({
   variable: '--font-manrope',
@@ -18,7 +19,9 @@ export const metadata: Metadata = {
   title: 'RentalCar',
   description:
     'RentalCar is a modern car rental platform where users can explore vehicles, view detailed information, and book a car quickly and easily.',
-  icons: '/logo.svg',
+  icons: {
+    icon: '/logo.svg',
+  },
 };
 
 export default function RootLayout({
@@ -29,8 +32,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${manrope.variable} ${inter.variable}`}>
-        <Header />
-        <TanStackProvider> {children}</TanStackProvider>
+        <TanStackProvider>
+          <Header />
+          {children}
+          <Toaster position="top-right" />
+        </TanStackProvider>
       </body>
     </html>
   );
