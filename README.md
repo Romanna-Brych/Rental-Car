@@ -66,7 +66,9 @@ npm install
 
 4. Create a .env.local file:
 
+```bash
 NEXT_PUBLIC_BASE_URL=your_api_url
+```
 
 5. Start the development server:
 
